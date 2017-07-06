@@ -1,0 +1,30 @@
+.circle{
+  border: 1px solid black;
+  border-radius: 50%;
+  width: 100%;
+}
+
+.lights-ew{
+  height: 50px;
+  width: 100px;
+}
+
+.lights-ns{
+  height: 100px;
+  width: 50px;
+}
+
+.lights-ns > span {
+  height: 33px;
+  width: 49px;
+}
+
+.green {
+  background-color: green;
+}
+.yellow {
+  background-color: yellow;
+}
+.red {
+  background-color: red;
+}
