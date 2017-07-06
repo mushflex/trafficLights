@@ -20,8 +20,8 @@ var objLightsEastWest = {
 	red: false
 }
 
-var fiveMinuetes = 1000*10;//5000*60*60; 
-var thirtySecs = 1000*5//1000*30;
+var fiveMinuetes = 5000*60*60; //1000*10;
+var thirtySecs = 1000*30; //1000*5
 
 /*
 * Start the traffic lights app, initially traffic is flowing north south
@@ -39,10 +39,10 @@ lightsTimer(fiveMinuetes, true, objlightsNorthSouth);
 * 	
 */
 function lightsTimer(intTime, blnRunYellow, objLights) {
-	console.log("lightsTimer: ", intTime, blnRunYellow, objLights);
+	//console.log("lightsTimer: ", intTime, blnRunYellow, objLights);
 
     setTimeout(function(){ 
-    	console.log("inside timeout: ", objLights, blnRunYellow)
+    	//console.log("inside timeout: ", objLights, blnRunYellow)
     	if(blnRunYellow){
     		objLights.green = false;
     		objLights.yellow = true;
