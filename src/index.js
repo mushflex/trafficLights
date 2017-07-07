@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './Styles/index.css';
-//import {GreenLightEW, RedLightEW, YellowLightEW, GreenLightNS, RedLightNS, YellowLightNS} from './App';
 
 import {NorthLightsGreen, NorthLightsRed, NorthLightsYellow}  from './Components/NorthLights';
 import {SouthLightsGreen, SouthLightsRed, SouthLightsYellow} from './Components/SouthLights';
@@ -26,8 +25,8 @@ var objLightsEastWest = {
 	red: false
 }
 
-var fiveMinuetes = 5000*60*60; 
-var thirtySecs = 1000*30; 
+var fiveMinuetes = 1000*60*5;
+var thirtySecs = 1000*30;
 
 //test with short time intervals
 //var fiveMinuetes = 1000*10; //10 secs
@@ -38,29 +37,29 @@ var thirtySecs = 1000*30;
 */
 ReactDOM.render(<NorthLightsGreen />, document.getElementById('lightsNorth'));
 ReactDOM.render(<SouthLightsGreen />, document.getElementById('lightsSouth'));
-ReactDOM.render(<EastLightsRed />, document.getElementById('lightsEast'));	
+ReactDOM.render(<EastLightsRed />, document.getElementById('lightsEast'));
 ReactDOM.render(<WestLightsRed />, document.getElementById('lightsWest'));
 lightsTimer(fiveMinuetes, true, objlightsNorthSouth);
 
 
 /*
-* Lights Timer 
+* Lights Timer
 * 	timer to wait for 5 mins or 30 secs and then change the traffic lights
-* 	
+*
 */
 function lightsTimer(intTime, blnRunYellow, objLights) {
 	//console.log("lightsTimer: ", intTime, blnRunYellow, objLights);
 
-    setTimeout(function(){ 
+    setTimeout(function(){
     	//console.log("inside timeout: ", objLights, blnRunYellow)
     	if(blnRunYellow){
     		objLights.green = false;
     		objLights.yellow = true;
     		if(objLights.position === "NS") {
-    			ReactDOM.render(<NorthLightsYellow />, document.getElementById('lightsNorth'));	
+    			ReactDOM.render(<NorthLightsYellow />, document.getElementById('lightsNorth'));
     			ReactDOM.render(<SouthLightsYellow />, document.getElementById('lightsSouth'));
     		}else{
-    			ReactDOM.render(<EastLightsYellow />, document.getElementById('lightsEast'));	
+    			ReactDOM.render(<EastLightsYellow />, document.getElementById('lightsEast'));
     			ReactDOM.render(<WestLightsYellow />, document.getElementById('lightsWest'));
     		}
 
@@ -68,7 +67,7 @@ function lightsTimer(intTime, blnRunYellow, objLights) {
     	}else{
     		switchLights();
     	}
-    		
+
 	}, intTime);
 
 }
@@ -82,7 +81,7 @@ function switchLights() {
 	if(objlightsNorthSouth.yellow){
 		objlightsNorthSouth.yellow = false;
     	objlightsNorthSouth.red = true;
-		ReactDOM.render(<NorthLightsRed />, document.getElementById('lightsNorth'));	
+		ReactDOM.render(<NorthLightsRed />, document.getElementById('lightsNorth'));
     	ReactDOM.render(<SouthLightsRed />, document.getElementById('lightsSouth'));
 
 	 	objLightsEastWest.green = true;
@@ -93,7 +92,7 @@ function switchLights() {
 
 		objLightsEastWest.yellow = false;
     	objLightsEastWest.red = true;
-		ReactDOM.render(<EastLightsRed />, document.getElementById('lightsEast'));	
+		ReactDOM.render(<EastLightsRed />, document.getElementById('lightsEast'));
     	ReactDOM.render(<WestLightsRed />, document.getElementById('lightsWest'));
 
 	 	objlightsNorthSouth.green = true;
@@ -104,4 +103,3 @@ function switchLights() {
 }
 
 registerServiceWorker();
-
