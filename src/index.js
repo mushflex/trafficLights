@@ -49,10 +49,10 @@ lightsTimer(fiveMinuetes, true, objlightsNorthSouth);
 * 	
 */
 function lightsTimer(intTime, blnRunYellow, objLights) {
-	console.log("lightsTimer: ", intTime, blnRunYellow, objLights);
+	//console.log("lightsTimer: ", intTime, blnRunYellow, objLights);
 
     setTimeout(function(){ 
-    	console.log("inside timeout: ", objLights, blnRunYellow)
+    	//console.log("inside timeout: ", objLights, blnRunYellow)
     	if(blnRunYellow){
     		objLights.green = false;
     		objLights.yellow = true;
@@ -78,7 +78,7 @@ function lightsTimer(intTime, blnRunYellow, objLights) {
 * 	switch the corresponding lights to green and start a new timer
 */
 function switchLights() {
-	console.log("switchLights", );
+	//console.log("switchLights", );
 	if(objlightsNorthSouth.yellow){
 		objlightsNorthSouth.yellow = false;
     	objlightsNorthSouth.red = true;
