@@ -18,11 +18,14 @@ body {
 }
 
 .lights-east {
-	height: 50px;
+	height: 25px;
+	margin-top: 25px;
 }
 
 .lights-south {
 	width: 50px;
+	margin-left: 24px;
+    margin-right: -24px;
 }
 
 .lights-west {

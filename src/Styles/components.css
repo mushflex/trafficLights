@@ -1,26 +1,28 @@
 .circle{
-  border: 1px solid black;
+  border: 1px solid #9E9E9E;
   border-radius: 50%;
   width: 100%;
 }
 
 .lights-ew{
-  height: 50px;
+  border: 1px solid;
+  height: 25px;
   width: 100px;
 }
 
 .lights-ns{
+  border: 1px solid;
   height: 100px;
-  width: 50px;
+  width: 25px;
 }
 
 .lights-ns > span {
   height: 33px;
-  width: 49px;
+  width: 24px;
 }
 
 .green {
-  background-color: green;
+  background-color: rgba(0, 128, 0, 0.74);
 }
 .yellow {
   background-color: yellow;
